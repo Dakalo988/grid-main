@@ -1,0 +1,198 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: cursive;
+}
+.container{
+    padding: 2rem 4rem;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    gap: 8px;
+    grid-template-columns:2fr 3.5fr 3.5fr 3fr;
+    grid-template-rows:2fr 4fr 4fr 2fr;
+    grid-template-areas: 
+    "heading heading heading heading"
+    "lt mb . rt"
+    "lt . ml rt"
+    "foot foot foot foot";
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; 
+}
+/* head-section-start */
+.head{
+    grid-area: heading;
+    display: flex;
+    gap:8px;
+    background-color:transparent;
+    border: none;
+    >.left-h{
+        width:50vw;
+        background-color:#032030; 
+    }
+    >.mid-h{
+        width:15vw; 
+        background-color:#022B42; 
+    }
+    >.right-h{
+        width:35vw; 
+        background-color:#003554; 
+    }
+    >.icon{
+        display: none;
+        width:15vw;
+    }
+}
+/* head-section-end */
+/* banner-section-start */
+.left-aside{
+    grid-area: lt;
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+    background-color:transparent;
+    border: none;
+    .left-up{
+        height: 85vh;
+        background-color:#032030; 
+    }
+    .left-down{
+        height: 15vh;
+        background-color: #022B42;
+    }
+}
+.middle-left-box{
+    grid-area: ml;
+    background-color:#006494;
+}
+.middle-box{
+    grid-area: mb;
+    background-color:#022B42;
+ }
+.right-aside{
+    grid-area: rt;
+    background-color:#032030;
+}
+/* banner-section-start */
+/* footer-start */
+.foot{
+   grid-area: foot;
+   display: flex;
+   gap: 8px;
+   background-color:transparent;
+   border: none;
+   .foot-left{
+    width: 30vw;
+    background-color:#006DA4;
+    }
+    .foot-right{
+    width: 70vw;
+    background-color:#022B42;
+   }
+}
+/* footer-start */
+/* responsiveness-tablet */
+@media only screen and (max-width:768px){
+    .container{
+        padding: 2rem 4rem;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        gap: 8px;
+        grid-template-columns:3fr 4.5fr 4.5fr;
+        grid-template-rows:2fr 3.5fr 3.5fr 1.5fr  1.5fr;
+        grid-template-areas: 
+        "heading heading heading"
+        "lt mb ml "
+        "lt rt rt "
+        "foot foot foot"
+        "foot foot foot ";
+    }
+    .head{
+        >.left-h{
+            display: none;
+            order:2;
+        }
+        .right-h{
+            width: 70vw;
+        }
+        >.icon{
+            display: block;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            height: 100%;
+            background-color: #006494;
+        }
+    }
+    .foot{
+        grid-area: foot;
+        display: flex;
+        flex-direction: column;
+        >.foot-left{
+            width: 100%;
+        }
+        >.foot-right{
+            width: 100%;
+        }
+     }
+}
+/* tablet end  */
+/* mobile-start */
+@media only screen and (max-width:600px){
+    .container{
+        padding: 2rem 4rem;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        gap: 8px;
+        grid-template-columns:5fr 7fr;
+        grid-template-rows:1.5fr 2.5fr 2.5fr 2.5fr 3fr ;
+        grid-template-areas: 
+        "heading heading"
+        "lt mb"
+        "lt ml"
+        "lt rt  "
+        "foot foot"
+        "foot foot";
+    }
+    .head{
+        >.left-h{
+            display: none;
+            order: 2;
+        }
+        .right-h{
+            display: none;
+        }
+        >.icon{
+            display: block;
+            display: flex;
+            justify-content:end;
+            padding-right: 1.5rem;
+            align-items: center;
+            width: 85vw;
+            height: 100%;
+            background-color: #006494;
+        }
+    }
+    .foot{
+        grid-area: foot;
+        display: flex;
+        flex-direction: column;
+        >.foot-left{
+            width: 100%;
+        }
+        >.foot-right{
+            width: 100%;
+        }
+     }
+}
+/* mobile-end */
